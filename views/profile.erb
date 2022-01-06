@@ -1,7 +1,8 @@
+<h1>Your active listings</h1>
 <section class="listings">
-    <%items.each do |item|%>
+    <%listings.each do |item|%>
     <div>
-        <a href="/items/<%=item['id']%>">
+        <a href="profile/items/<%=item['id']%>">
             <img src="<%= item['image_url'] %>" alt="">
         </a>
         <p class="item-details">

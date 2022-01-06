@@ -5,27 +5,74 @@
   <title> Closet </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    header span {
+      text-align: right;
+    }
+    a {
+      text-decoration: none;
+    }
     .nav-bar {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       gap: 2px;
-      background-color: black;
       color: white;
     }
+
     .nav-bar span {
       text-align: center;
       padding: 10px;
+      background-color: black;
     }
+
+    section {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr
+    }
+
+    div {
+      width: 200px;
+    }
+    img {
+      height: 400px;
+      width: 200px;
+      margin: 10px;
+    }
+
+    .item-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    #price {
+      color: darkgrey;
+      text-align: right;
+    }
+
   </style>
 </head>
 <body>
   <header>
-    <h1>Closet</h1>
-    <span> <a href="/login"> Sign In </a> </span>
+    <a href="/"><h1>Closet</h1></a>
+    <span> 
+      <% if logged_in? %>
+          Logged in as <a href="/profile"><%= current_user.username %></a>
+          <form action="/session" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button>Logout</button>
+          </form>
+      <% else %>
+          <a href="/login">Sign in</a>
+      <% end %>
+    </span>
   </header>
   <nav class="nav-bar">
-      <span> New Items </span>
-      <span> Shirts </span>
+      <span> <a href="/items/new">All Items</a> </span>
+      <span> <a href="/items/shirts"></a> Shirts </span>
       <span> Tees </span>
       <span> Pants </span>
       <span> Shorts </span>
