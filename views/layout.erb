@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Closet </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .nav-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      gap: 2px;
+      background-color: black;
+      color: white;
+    }
+    .nav-bar span {
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Closet</h1>
+    <span> <a href="/login"> Sign In </a> </span>
+  </header>
+  <nav class="nav-bar">
+      <span> New Items </span>
+      <span> Shirts </span>
+      <span> Tees </span>
+      <span> Pants </span>
+      <span> Shorts </span>
+      <span> Shoes </span>
+      <span> Accessories </span>
+  </nav>
+
+  <%= yield %>
+
+</body>
+</html>
