@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+* {
+  border: 1px solid red;
+}
+
+body {
+  font-family: 'Anonymous Pro', monospace;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+header span {
+text-align: right;
+}
+
+a {
+  text-decoration: none;
+}
+
+header > a {
+  color: black;
+  font-size: 24px;
+}
+
+nav a {
+  color: white;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+input {
+  margin: 10px 0px 10px 0px;
+}
+
+.nav-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 2px;
+  color: white;
+}
+
+.container {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+a:visited, a:link {
+  decoration: none;
+  text-decoration: none;
+}
+
+.nav-bar span {
+  text-align: center;
+  padding: 5px;
+  background-color: black;
+  font-size: 14px;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+img {
+  height: 250px;
+  width: 125px;
+}
+
+.listings {
+  width: 100%;
+}
+
+.items {
+  width: 125px;
+  padding: 5px;
+}
+
+.item-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+p {
+  font-size: 12px;
+}
+
+#price {
+  color: darkgrey;
+  text-align: right;
+}

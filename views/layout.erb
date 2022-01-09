@@ -2,85 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title> Closet </title>
+  <title> wardrobe++ </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-
-    header span {
-      text-align: right;
-    }
-    a {
-      text-decoration: none;
-    }
-    .nav-bar {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-      gap: 2px;
-      color: white;
-    }
-
-    .nav-bar span {
-      text-align: center;
-      padding: 10px;
-      background-color: black;
-    }
-
-    section {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr
-    }
-
-    div {
-      width: 200px;
-    }
-    img {
-      height: 400px;
-      width: 200px;
-      margin: 10px;
-    }
-
-    .item-details {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-
-    #price {
-      color: darkgrey;
-      text-align: right;
-    }
-
-  </style>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-  <header>
-    <a href="/"><h1>Closet</h1></a>
-    <span> 
-      <% if logged_in? %>
-          Logged in as <a href="/profile"><%= current_user.username %></a>
-          <form action="/session" method="post">
-            <input type="hidden" name="_method" value="delete">
-            <button>Logout</button>
-          </form>
-      <% else %>
-          <a href="/login">Sign in</a>
-      <% end %>
-    </span>
-  </header>
-  <nav class="nav-bar">
-      <span> <a href="/items/new">All Items</a> </span>
-      <span> <a href="/items/shirts"></a> Shirts </span>
-      <span> Tees </span>
-      <span> Pants </span>
-      <span> Shorts </span>
-      <span> Shoes </span>
-      <span> Accessories </span>
-  </nav>
+  <div class="container">
+    <div class="content-wrapper">
+      <header>
+        <a href="/"><h1>wardrobe++</h1></a>
+        <span> 
+          <% if logged_in? %>
+            Logged in as <a href="/profile"><%= current_user.username %></a>
+            <form action="/session" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <button>Sign out</button>
+            </form>
+            <a href="/new">Sell</a>
+          <% else %>
+            <a href="/login">Sign in</a>
+            <p> Don't have an account? <a href="/profile/create">Sign Up</a>
+          <% end %>
+        </span>
+      </header>
+      <nav class="nav-bar">
+        <span> <a href="/items/new">All Items</a> </span>
+        <span> <a href="/items/jackets">Jackets</a> </span>
+        <span> <a href="/items/shirts">Shirts</a> </span>
+        <span> <a href="/items/tees">Tees</a> </span>
+        <span> <a href="/items/pants">Pants</a> </span>
+        <span> <a href="/items/shorts">Shorts</a> </span>
+        <span> <a href="/items/shoes">Shoes</a> </span>
+        <span> <a href="/items/accessories">Accessories</a> </span>
+      </nav>
 
-  <%= yield %>
+       <%= yield %>
 
+    </div>
+  </div>
+  
 </body>
 </html>

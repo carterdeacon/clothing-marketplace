@@ -1,0 +1,50 @@
+<h2> To list an item, please complete the form below </h2>
+
+<form action="/items" method="post">
+    <label for="">Designer: </label>
+    <input type="text" name="designer">
+
+    <label for="">Image URL: </label>
+    <input type="url" name="image_url" placeholder="https://">
+
+    <label>Category: </label>
+    <input list="category" name="category" />
+    <datalist id="category">
+        <option value="Jackets">
+        <option value="Shirts">
+        <option value="Tees">
+        <option value="Pants">
+        <option value="Shorts">
+        <option value="Shoes">
+        <option value="Accessories">
+    </datalist>
+
+    <label>Colour: </label>
+    <input list="colour" name="colour" />
+    <datalist id="colour">
+        <option value="White">
+        <option value="Black">
+        <option value="Grey">
+        <option value="Red">
+        <option value="Blue">
+        <option value="Green">
+        <option value="Yellow">
+        <option value="Purple">
+        <option value="Orange">
+        <option value="Brown">
+    </datalist>
+
+    <label for="">Price: </label>
+    <input type="number" name="price">
+
+    <label>Currency: </label>
+    <input list="currency" name="currency" />
+    <datalist id="currency">
+        <option value="AUD">
+        <option value="USD">
+        <option value="GBP">
+        <option value="EUR">
+        <option value="JPY">
+    </datalist>
+    <button>List item</button>
+</form>
