@@ -1,12 +1,14 @@
-<div class="item">    
-    <h2> <%= item['designer'] %> </h2>
-    <h3>$<%= item['price']%> <%=item['currency'] %></h3>
-    <img src="<%= item['image_url'] %>" alt="">
-
-    <a href="/profile/items/<%=item['id']%>/edit"> Update this listing </a>
-    <form action="/profile/items/<%= item['id'] %>" method="post">
-        <input type="hidden" name="_method" value = "delete">
-        <input type="hidden" name="dish_id" value = "<%= item['id'] %>">
-        <button> Remove Listing </button>
-    </form>
+<div class="item-view">
+    <div class="item-info">    
+        <h2> <%= item['designer'] %> </h2>
+        <h3>$<%= item['price']%> <%=item['currency'] %></h3>
+        <a href="/profile/items/<%=item['id']%>/edit"> Update this listing </a>
+        <form action="/profile/items/<%= item['id'] %>" method="post">
+            <input type="hidden" name="_method" value = "delete">
+            <input type="hidden" name="dish_id" value = "<%= item['id'] %>">
+            <button> Remove Listing </button>
+        </form>
+    </div>
+        
+    <img class="view-img" src="<%= item['image_url'] %>" alt="">
 </div>

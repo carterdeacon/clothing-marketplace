@@ -1,13 +1,15 @@
 <section class="listings">
-    <%tees.each do |item|%>
-    <div class="items">
-        <a href="/items/<%=item['id']%>">
-            <img src="<%= item['image_url'] %>" alt="">
-        </a>
-        <p class="item-details">
-            <span> <%= item['designer'] %> </span>
-            <span id="price"> $<%= item['price'] %> <%=item['currency']%></span>
-        </p>
+    <div class="items-wrapper">
+        <%tees.each do |item|%>
+        <div class="items">
+            <a href="/items/<%=item['id']%>">
+                <img src="<%= item['image_url'] %>" alt="">
+            </a>
+            <p class="item-details">
+                <span> <%= item['designer'] %> </span>
+                <span id="price"> $<%= item['price'] %> <%=item['currency']%></span>
+            </p>
+        </div>
+        <% end %>
     </div>
-    <% end %>
 </section>

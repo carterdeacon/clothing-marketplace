@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'pg'
 require 'bcrypt'
+require 'httparty'
 
 enable :sessions
 
@@ -35,9 +36,12 @@ end
 # Individual item
 get '/items/:id' do
   item_id = params['id']
+  price = params['price']
+  currency = params['currency']
   item = db_query("SELECT * FROM items WHERE id = $1;", [item_id]).first
   seller = get_username(item['user_id']).first['username']
-  erb :view_item, locals: {item: item, seller: seller}
+  converted = currency_convert(price, currency)
+  erb :view_item, locals: {item: item, seller: seller, converted: converted}
 end
 
 # Handle logins (users will user username rather than email)
@@ -67,7 +71,8 @@ end
 get '/profile' do
   user_id = session[:user_id]
   listings = db_query("SELECT * FROM items WHERE user_id = '#{user_id}';")
-  erb :profile, locals: {listings: listings}
+  user_data = db_query("SELECT * FROM users WHERE id = '#{user_id}';").first
+  erb :profile, locals: {listings: listings, user_data: user_data}
 end
 
 # Create profile page
@@ -92,8 +97,8 @@ end
 
 # Get item on profile page (user specific)
 get '/profile/items/:id' do
-  redirect '/login' unless logged_in?
   item_id = params['id']
+  redirect '/login' unless logged_in? 
   item = db_query("SELECT * FROM items WHERE id = $1;", [item_id]).first
   erb :profile_items, locals: {item: item}
 end
@@ -128,5 +133,6 @@ get '/cart' do
 end
 
 post '/cart' do
+  redirect '/login' unless logged_in?
   redirect '/cart'
 end

@@ -1,8 +1,13 @@
-<h2> <%= item['designer'] %> </h2>
-<p> Posted by <%=seller%></p>
-<h3>$<%= item['price']%> <%=item['currency'] %></h3>
-<img src="<%= item['image_url'] %>" alt="">
-
-<form action="/cart" method="post">
- <button> Add to cart </button>
-</form>
+<div class="item-view">
+    <div class="item-info">
+        <h2> <%= item['designer'] %> </h2>
+        <p> Posted by <%=seller%></p>
+        <h3>$<%= item['price']%> <%=item['currency'] %></h3>
+        <%# In progress %>
+        <p> Approximately $<%=converted%>AUD </p>
+        <form action="/cart" method="post">
+            <button> Add to cart </button>
+        </form>
+    </div>
+    <img class="view-img" src="<%= item['image_url'] %>" alt="">
+</div>

@@ -1,51 +1,55 @@
+<div class="input-wrapper">
+    <div class="multi-input-form">
+        <h2> Update your listing </h2>
+        <form action="/profile/items/<%=item['id']%>" method="post">
+        <input type="hidden" name="_method" value="put">
 
-<form action="/profile/items/<%=item['id']%>" method="post">
-<input type="hidden" name="_method" value="put">
+            <label for="">Designer: </label>
+            <input type="text" name="designer" value="<%=item['designer']%>">
 
-    <label for="">Designer: </label>
-    <input type="text" name="designer" value="<%=item['designer']%>">
+            <label for="">Image URL: </label>
+            <input type="url" name="image_url" placeholder="https://" value="<%= item['image_url']%>">
 
-    <label for="">Image URL: </label>
-    <input type="url" name="image_url" placeholder="https://" value="<%= item['image_url']%>">
+            <label>Category: </label>
+            <input list="category" name="category" />
+            <datalist id="category">
+                <option value="Jackets">
+                <option value="Shirts">
+                <option value="Tees">
+                <option value="Pants">
+                <option value="Shorts">
+                <option value="Shoes">
+                <option value="Accessories">
+            </datalist>
 
-    <label>Category: </label>
-    <input list="category" name="category" />
-    <datalist id="category">
-        <option value="Jackets">
-        <option value="Shirts">
-        <option value="Tees">
-        <option value="Pants">
-        <option value="Shorts">
-        <option value="Shoes">
-        <option value="Accessories">
-    </datalist>
+            <label>Colour: </label>
+            <input list="colour" name="colour" />
+            <datalist id="colour">
+                <option value="White">
+                <option value="Black">
+                <option value="Grey">
+                <option value="Red">
+                <option value="Blue">
+                <option value="Green">
+                <option value="Yellow">
+                <option value="Purple">
+                <option value="Orange">
+                <option value="Brown">
+            </datalist>
 
-    <label>Colour: </label>
-    <input list="colour" name="colour" />
-    <datalist id="colour">
-        <option value="White">
-        <option value="Black">
-        <option value="Grey">
-        <option value="Red">
-        <option value="Blue">
-        <option value="Green">
-        <option value="Yellow">
-        <option value="Purple">
-        <option value="Orange">
-        <option value="Brown">
-    </datalist>
+            <label for="">Price: </label>
+            <input type="number" name="price" value="<%= item['price']%>">
 
-    <label for="">Price: </label>
-    <input type="number" name="price" value="<%= item['price']%>">
-
-    <label>Currency: </label>
-    <input list="currency" name="currency" />
-    <datalist id="currency">
-        <option value="AUD">
-        <option value="USD">
-        <option value="GBP">
-        <option value="EUR">
-        <option value="JPY">
-    </datalist>
-    <button>Update</button>
-</form>
+            <label>Currency: </label>
+            <input list="currency" name="currency" />
+            <datalist id="currency">
+                <option value="AUD">
+                <option value="USD">
+                <option value="GBP">
+                <option value="EUR">
+                <option value="JPY">
+            </datalist>
+            <button>Update</button>
+        </form>
+    </div>
+</div>

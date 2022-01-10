@@ -1,14 +1,16 @@
 <h1>Your active listings</h1>
 <section class="listings">
-    <%listings.each do |item|%>
-    <div>
-        <a href="profile/items/<%=item['id']%>">
-            <img src="<%= item['image_url'] %>" alt="">
-        </a>
-        <p class="item-details">
-            <span> <%= item['designer'] %> </span>
-            <span id="price"> $<%= item['price'] %> <%=item['currency']%></span>
-        </p>
+    <div class="items-wrapper">
+        <%listings.each do |item|%>
+        <div class="items">
+            <a href="profile/items/<%=item['id']%>">
+                <img src="<%= item['image_url'] %>" alt="">
+            </a>
+            <p class="item-details">
+                <span> <%= item['designer'] %> </span>
+                <span id="price"> $<%= item['price'] %> <%=item['currency']%></span>
+            </p>
+        </div>
+        <% end %>
     </div>
-    <% end %>
 </section>

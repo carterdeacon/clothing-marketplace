@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+
 * {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  box-sizing: border-box;
 }
 
 body {
@@ -13,7 +15,7 @@ header {
 }
 
 header span {
-text-align: right;
+  text-align: right;
 }
 
 a {
@@ -29,8 +31,13 @@ nav a {
   color: white;
 }
 
+h1 {
+  margin: 25px 0 25px 0;
+}
+
 h2 {
-  font-size: 18px;
+  padding: 25px 0 0 0;
+  font-size: 24px;
 }
 
 input {
@@ -51,7 +58,6 @@ input {
 }
 
 a:visited, a:link {
-  decoration: none;
   text-decoration: none;
 }
 
@@ -69,22 +75,55 @@ section {
 }
 
 img {
-  height: 250px;
-  width: 125px;
+  height: 270px;
+  width: 150px;
+}
+
+input {
+  text-align: center;
+}
+
+button {
+  margin: 5px 0 5px 0;
 }
 
 .listings {
+  padding: 25px 5px 0px 5px;
   width: 100%;
+  text-align: center;
 }
 
+.items-wrapper {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 80px;
+}
 .items {
-  width: 125px;
+  width: 200px;
   padding: 5px;
+  text-align: center;
 }
 
 .item-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.item-view {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.item-info {
+  margin: 50% 0 50% 0;
+  text-align: center;
+}
+
+.view-img {
+  height: 80%;
+  width: 65%;
+  margin: 25px 0 0 100px;
 }
 
 p {
@@ -94,4 +133,29 @@ p {
 #price {
   color: darkgrey;
   text-align: right;
+}
+
+footer {
+  margin: 25px 0 15px 0;
+  color: grey;
+  font-size: 10px;
+  text-align: center;
+}
+
+.input-wrapper {
+  display: block;
+}
+
+.multi-input-form input {
+  display: block;
+  margin: 10px auto;
+}
+
+.multi-input-form {
+  width: 50%;
+  margin: 100px 25% 100px 25%;
+  text-align: center;
+  padding: 0 0 25px 0;
+  background-color: grey;
+  border-radius: 20px;
 }

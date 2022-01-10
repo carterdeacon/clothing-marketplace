@@ -1,4 +1,7 @@
 require 'pg'
+require 'httparty'
+
+API_KEY = ENV["CURRENCY_API_KEY"]
 
 def db_query(sql, params = [])
     conn = PG.connect(dbname: 'marketplace')
@@ -12,7 +15,16 @@ def all_items()
 end
 
 def new_items()
-    db_query("SELECT * FROM items ORDER by id DESC;")
+    db_query("SELECT * FROM items ORDER by id DESC LIMIT 20;")
+end
+
+# In progress
+def currency_convert(price, currency)
+    url = "https://freecurrencyapi.net/api/v2/latest?apikey=[#{API_KEY}]&base_currency=#{currency}"
+    result = HTTParty.get(url)
+    rate = result['data']['AUD']
+    converted_price = rate*price.to_i
+    return converted_price
 end
 
 def create_listing(user_id, designer, image_url, category, colour, price, currency)
