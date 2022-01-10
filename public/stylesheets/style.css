@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
 
 * {
-  /* border: 1px solid red; */
   box-sizing: border-box;
 }
 
@@ -68,17 +67,6 @@ a:visited, a:link {
   font-size: 14px;
 }
 
-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 30px;
-}
-
-img {
-  height: 270px;
-  width: 150px;
-}
-
 input {
   text-align: center;
 }
@@ -91,19 +79,27 @@ button {
   padding: 25px 5px 0px 5px;
   width: 100%;
   text-align: center;
+  padding: 5px;
 }
 
 .items-wrapper {
   width: 90%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 80px;
+  gap: 5%;
+  margin: 0 auto;
 }
+
 .items {
-  width: 200px;
+  width: 10vw;
   padding: 5px;
-  text-align: center;
+  margin: 0 auto;
 }
+
+.items img {
+    height: 15vw;
+    max-width: 9vw;
+} 
 
 .item-details {
   display: grid;
@@ -136,7 +132,7 @@ p {
 }
 
 footer {
-  margin: 25px 0 15px 0;
+  margin: 250px 0 15px 0;
   color: grey;
   font-size: 10px;
   text-align: center;
