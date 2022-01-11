@@ -18,13 +18,13 @@ def new_items()
     db_query("SELECT * FROM items ORDER by id DESC LIMIT 20;")
 end
 
-# In progress
-def currency_convert(price, currency)
-    url = "https://freecurrencyapi.net/api/v2/latest?apikey=[#{API_KEY}]&base_currency=#{currency}"
+# In progress - returns nil value but works in pry
+def currency_convert(price)
+    url = "http://api.exchangeratesapi.io/v1/latest?access_key=#{API_KEY}"
     result = HTTParty.get(url)
-    rate = result['data']['AUD']
-    converted_price = rate*price.to_i
-    return converted_price
+    aud_rate = result['rates']['AUD']
+    converted = (price * aud_rate).round(2)
+    return converted
 end
 
 def create_listing(user_id, designer, image_url, category, colour, price, currency)

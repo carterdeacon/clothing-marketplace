@@ -40,8 +40,9 @@ get '/items/:id' do
   currency = params['currency']
   item = db_query("SELECT * FROM items WHERE id = $1;", [item_id]).first
   seller = get_username(item['user_id']).first['username']
-  converted = currency_convert(price, currency)
-  erb :view_item, locals: {item: item, seller: seller, converted: converted}
+  # This works in pry but gives errors otherwise, commenting out until fixed
+  # converted = currency_convert(item['price'])
+  erb :view_item, locals: {item: item, seller: seller}
 end
 
 # Handle logins (users will user username rather than email)
