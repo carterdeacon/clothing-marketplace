@@ -4,7 +4,7 @@ wardrobe++ is a CRUD application made to build upon my knowledge of Ruby/Sinatra
 
 ## Usage
 
-Browsing the website can be done at [link] but performing creation, updates or removal of listings will require user account creation or login. Usernames, emails and passwords are validated upon accoutn creation and the password is  digested by bcrypt and stored as a digested password in the database.
+Browsing the website can be done at [wardrobe++](https://wardrobe-project.herokuapp.com/) but performing creation, updates or removal of listings will require user account creation or login. Usernames, emails and passwords are validated upon accoutn creation and the password is  digested by bcrypt and stored as a digested password in the database.
 
 # Challenges
 * Submission of SQL to the database was tricky at first. A few errors and some mistakes caused deletion / modification of every entry.
