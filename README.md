@@ -8,11 +8,11 @@ Browsing the website can be done at [wardrobe++](https://wardrobe-project.heroku
 
 # Challenges
 * Submission of SQL to the database was tricky at first. A few errors and some mistakes caused deletion / modification of every entry.
-* Using the currency conversion API gave some issues with tryign to convert numbers - still needs some work as of January 10, 2022.
+* Using the currency conversion API gave some issues with trying to convert numbers / llimited requests without paid API - still needs work as of January 12, 2022.
 
 # To be implemented
 In future, the following features will be implemented to wardrobe++:
-* COnversion - currency conversion to be shown to users (in AUD by default) as required.
+* Conversion - currency conversion to be shown to users (in AUD by default) as required.
 * Wishlist - option for users to add to wishlist / track items.
 * Search - ability for users to search for specific content.
 * Active / Inactive listings - filter for sold listings to allow users to track sold items vs active listings.
